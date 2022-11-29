@@ -2,13 +2,16 @@
 """
 Created on Sat Nov 26 21:42:03 2022
 
-@author: PC GOAT
+@author: Marcos Daniel Rodríguez Farfán
 """
 import argparse
 import inputValidation as inpVal
+import data_segmentation as data
 
 #%%
 if __name__ == '__main__':
+    Data_dictionary = {}
+    mylist = []
     
     #Create our parser
     parser = argparse.ArgumentParser()
@@ -21,6 +24,9 @@ if __name__ == '__main__':
     #Verify inputs    
     inpVal.validate_input(inputs = args.i,outputs = args.o)
 
-    inpVal.patterns(args.i)
-    #Call function to check line with regular expresion
-    #Dict = data.check_line(file)
+    Data_dictionary = inpVal.patterns(args.i)
+    
+    for key,value in Data_dictionary.items():
+        print(key,'\n',value)
+        #Call function to split data 
+        Data_dictionary[key] = data.split_data(key, value)

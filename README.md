@@ -1,2 +1,2 @@
 # Final_Proyect_Programming
- Final Proyect Computation 
+ Marcos Daniel Rodríguez Farfán

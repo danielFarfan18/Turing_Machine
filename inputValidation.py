@@ -2,7 +2,7 @@
 """
 Created on Sat Nov 26 21:57:49 2022
 
-@author: PC GOAT
+@author: Marcos Daniel Rodríguez Farfán
 """
 import re
 #%%Create functions
@@ -38,6 +38,7 @@ def validate_input(inputs,outputs):
     and check by line if it match with a pattern and the line were was found
 """
 def patterns(arguments):
+    myDict = {}
     #All patterns to read
     q_pattern = '@(\s*Q\s*)\s*=\s*({(\s*q\d\d*\s*)+(,\s*q\d\d*\s*)*})'
     sigma_pattern = '@(\s*sigma\s*)\s*=\s*({(\s*\d\s*)+(,\s*\d\s*)*})'
@@ -62,6 +63,8 @@ def patterns(arguments):
                 print ('Found on line %s: %s' % (i+1, match.group()))
                 #Add to our check list to make sure all arguments are in the file
                 check.append(match.group(1))
+                myDict[match.group(1)] = match.group(2)
+                
     
     #Create list with our names to check
     names = ['Q','sigma','gamma','q0','b','F','f','test','val']
@@ -70,5 +73,6 @@ def patterns(arguments):
          if name not in check:
              raise Exception("One data is missing in input file, add or check {} line".format(name))
     print('Your data has been readed successfully')
-             
+    
+    return myDict
                 
