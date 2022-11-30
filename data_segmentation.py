@@ -23,6 +23,8 @@ def split_data(keys,values):
        values = values.strip('{').strip('}').split(',')
        for item in values:
            data_splited.append(item.replace(')->('," ").replace('(','').replace(')','').split(' '))
+    elif keys == 'b' or keys == 'q0':
+        data_splited = values.split()
     else:
         data_splited = values.strip('{').strip('}').split(',')
             

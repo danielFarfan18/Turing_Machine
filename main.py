@@ -27,6 +27,11 @@ if __name__ == '__main__':
     Data_dictionary = inpVal.patterns(args.i)
     
     for key,value in Data_dictionary.items():
-        print(key,'\n',value)
-        #Call function to split data 
+        #Call function to split data
         Data_dictionary[key] = data.split_data(key, value)
+        
+    inpVal.alphabet_validation('gamma','sigma', Data_dictionary)   
+    inpVal.alphabet_validation('Q','q0', Data_dictionary)   
+    inpVal.alphabet_validation('Q','F', Data_dictionary)   
+    inpVal.transition_validation('gamma', 'Q', 'f', Data_dictionary)
+    print('Your data has been readed successfully')
