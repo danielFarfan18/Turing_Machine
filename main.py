@@ -7,9 +7,11 @@ Created on Sat Nov 26 21:42:03 2022
 import argparse
 import inputValidation as inpVal
 import data_segmentation as data
+import turingMachine as TM
 
 #%%
 if __name__ == '__main__':
+    
     Data_dictionary = {}
     mylist = []
     
@@ -30,8 +32,15 @@ if __name__ == '__main__':
         #Call function to split data
         Data_dictionary[key] = data.split_data(key, value)
         
+    #Check if something is wrong in language or states
     inpVal.alphabet_validation('gamma','sigma', Data_dictionary)   
     inpVal.alphabet_validation('Q','q0', Data_dictionary)   
     inpVal.alphabet_validation('Q','F', Data_dictionary)   
     inpVal.transition_validation('gamma', 'Q', 'f', Data_dictionary)
-    print('Your data has been readed successfully')
+    TM.turing_machine(Data_dictionary['test'], Data_dictionary['val'],
+                      Data_dictionary['b'], Data_dictionary['f'])
+    
+    
+    
+    
+    
