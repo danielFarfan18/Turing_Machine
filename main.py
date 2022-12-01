@@ -38,7 +38,8 @@ if __name__ == '__main__':
     inpVal.alphabet_validation('Q','F', Data_dictionary)   
     inpVal.transition_validation('gamma', 'Q', 'f', Data_dictionary)
     TM.turing_machine(Data_dictionary['test'], Data_dictionary['val'],
-                      Data_dictionary['b'], Data_dictionary['f'])
+                      Data_dictionary['b'], Data_dictionary['f'],
+                      Data_dictionary['q0'],Data_dictionary['F'])
     
     
     
