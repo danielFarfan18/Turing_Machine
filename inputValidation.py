@@ -75,15 +75,15 @@ def patterns(arguments):
     """
     myDict = {}
     #All patterns to read
-    q_pattern = '@(\s*Q\s*)\s*=\s*({(\s*q\d\d*\s*)+(,\s*q\d\d*\s*)*})'
-    sigma_pattern = '@(\s*sigma\s*)\s*=\s*({(\s*\d\s*)+(,\s*\d\s*)*})'
-    gamma_pattern = '@(\s*gamma\s*)\s*=\s*({\s*\d\s*,\s*\d\s*,\D\s*,\s*\D\s*,\s*\D\s*})'  
-    starter_pattern = '@(\s*q0\s*)\s*=\s*(\s*\D\d\d*\s*)'  
+    q_pattern = '@(\s*Q\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
+    sigma_pattern = '@(\s*sigma\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
+    gamma_pattern = '@(\s*gamma\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'  
+    starter_pattern = '@(\s*q0\s*)\s*=\s*(\s*\w+\s*)'  
     space_pattern = '@(\s*b\s*)\s*=\s*(\s*\D\s*)'
-    final_state_pattern = '@(\s*F\s*)\s*=\s*({(\s*\D\d\d*\s*)+(,\s*\D\d\d*\s*)*})'
-    transition_pattern = '@(\s*f\s*)=\s*({\(\s*q\d+ \s*\w\s*\)\s*->\s*\(\s*q\d+ \s*\w \s*\D\)\s*(,\s*\(\s*q\d+ \s*\w\s*\)\s*->\s*\(\s*q\d+ \s*\w \s*\D\)\s*)*})'
-    test_pattern = '@(\s*test\s*)\s*=\s*({(\s*\d*\s*)+(,\s*\d*\s*)*})'
-    eval_pattern = '@(\s*val\s*)\s*=\s*({(\s*\D*\s*)+(,\s*\D*\s*)*})'
+    final_state_pattern = '@(\s*F\s*)\s*=\s*({(\s*\w+\s*)})'
+    transition_pattern = '@(\s*f\s*)=\s*({\(\s*\w+\s*\w\s*\)\s*->\s*\(\s*\w+\s*\w \s*\w\)\s*(,\s*\(\s*\w+ \s*\w\s*\)\s*->\s*\(\s*\w+ \s*\w \s*\w\)\s*)*})'
+    test_pattern = '@(\s*test\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
+    eval_pattern = '@(\s*val\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
     #Create list of patterns
     patterns =[q_pattern,sigma_pattern,gamma_pattern,starter_pattern
                ,space_pattern,final_state_pattern,transition_pattern
