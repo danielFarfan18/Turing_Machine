@@ -185,4 +185,29 @@ def transition_validation(lang,state,field_name,dictionary):
             else:
                 raise Exception('The item "{}" in {} is not defined in {} or {}'.format(item,field_name,lang,state))
     
-             
+def verify_test(testing,validation):
+    """
+    Function to verify lenght of test values and validation
+
+    Parameters
+    ----------
+    testing : List
+        DESCRIPTION. List of testing values
+    validation : List
+        DESCRIPTION. List of accepted and rejected
+
+    Raises
+    ------
+    Exception
+        DESCRIPTION. Exception when lenghts does not match
+
+    Returns
+    -------
+    None.
+
+    """
+    if len(testing) == len(validation):
+        pass
+    else:
+        raise Exception('Please verify  test and val lines, they are not the same lenght')
+        

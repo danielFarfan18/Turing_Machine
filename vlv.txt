@@ -1,0 +1,11 @@
++----------------+------------+----------+
+|     Tested     | Validation |  Result  |
++----------------+------------+----------+
+|     000111     |  accepted  | accepted |
+|      0011      |  accepted  | accepted |
+|    00001111    |  accepted  | accepted |
+|    0101010     |  rejected  | rejected |
+| 00000001111111 |  accepted  | accepted |
+|       01       |  accepted  | accepted |
+|    0100110     |  rejected  | rejected |
++----------------+------------+----------+

@@ -8,6 +8,7 @@ import argparse
 import inputValidation as inpVal
 import data_segmentation as data
 import turingMachine as TM
+import show_data as sd
 
 #%%
 if __name__ == '__main__':
@@ -31,17 +32,17 @@ if __name__ == '__main__':
     for key,value in Data_dictionary.items():
         #Call function to split data
         Data_dictionary[key] = data.split_data(key, value)
-        
+            
     #Check if something is wrong in language or states
     inpVal.alphabet_validation('gamma','sigma', Data_dictionary)   
     inpVal.alphabet_validation('Q','q0', Data_dictionary)   
     inpVal.alphabet_validation('Q','F', Data_dictionary)   
     inpVal.transition_validation('gamma', 'Q', 'f', Data_dictionary)
-    TM.turing_machine(Data_dictionary['test'], Data_dictionary['val'],
+    inpVal.verify_test(Data_dictionary['test'], Data_dictionary['val'])
+    dict_results = TM.turing_machine(Data_dictionary['test'], Data_dictionary['val'],
                       Data_dictionary['b'], Data_dictionary['f'],
                       Data_dictionary['q0'],Data_dictionary['F'])
     
-    
-    
+    sd.show_data(args.i, args.o, dict_results, Data_dictionary)
     
     
