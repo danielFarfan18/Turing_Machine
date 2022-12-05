@@ -3,6 +3,8 @@
 Created on Sat Nov 26 21:42:03 2022
 
 @author: Marcos Daniel Rodríguez Farfán
+
+Main function that controls all turing machine
 """
 import argparse
 import inputValidation as inpVal
@@ -39,10 +41,13 @@ if __name__ == '__main__':
     inpVal.alphabet_validation('Q','F', Data_dictionary)   
     inpVal.transition_validation('gamma', 'Q', 'f', Data_dictionary)
     inpVal.verify_test(Data_dictionary['test'], Data_dictionary['val'])
+    
+    #Create dictionary with results from turing machine
     dict_results = TM.turing_machine(Data_dictionary['test'], Data_dictionary['val'],
                       Data_dictionary['b'], Data_dictionary['f'],
                       Data_dictionary['q0'],Data_dictionary['F'])
     
+    #Call function to display results in display or save it in a txt file
     sd.show_data(args.i, args.o, dict_results, Data_dictionary)
     
     

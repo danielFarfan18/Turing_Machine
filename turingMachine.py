@@ -2,7 +2,13 @@
 """
 Created on Wed Nov 30 10:48:14 2022
 
-@author: PC GOAT
+turingMAchine Module:
+    This module executes all funtions to handle our turing machine.
+    
+    Functions:
+        transition_function:Function to execute transitions of turing machine.
+        turing_machine: Function of turing machine, it's how it works
+
 """
 def transition_function(transition,index,mylist):
     """
@@ -39,7 +45,7 @@ def transition_function(transition,index,mylist):
 
 def turing_machine(testing,validation,blank,rules,initial_state_machine,final_state_machine):
     """
-    Function of tueing machine
+    Function of turing machine
     First adds blank spaces to all our tests, then gets a test value and initializes
     our turing machine with initial (actual_state),final state(final_state)
     and head position (i). Then moves over all our posible transition states, if 

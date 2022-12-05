@@ -2,7 +2,12 @@
 """
 Created on Sat Dec  3 23:08:15 2022
 
-@author: PC GOAT
+Module Show data:
+    This module has all functionsto display our results in tables and show them 
+    
+    Contains:
+        Create_table: function to create our table of results
+        Show_data: Function to show our results in display or save it in a txt file.
 """
 from prettytable import PrettyTable
 

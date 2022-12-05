@@ -3,6 +3,18 @@
 Created on Sat Nov 26 21:57:49 2022
 
 @author: Marcos Daniel Rodríguez Farfán
+
+inputValidation module:
+    This module contains everything to make validations in our readed file
+    
+    Functions:
+        validate_input:This function check's if there is an error introducing our data by 
+        command window.
+        patterns: Function to get data and validate our file using regular expresions.
+        alphabet_validation: verify if something is included in our language.
+        transition_validation: verify if everything in our transition state is
+        defined.
+        verify_test: verify if tests and values are the same lenght.
 """
 import re
 

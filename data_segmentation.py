@@ -2,7 +2,11 @@
 """
 Created on Mon Nov 28 23:58:30 2022
 
-@author: PC GOAT
+data_segmentation module:
+    This module gets all recived data from txt file and separate them into lists
+    
+    Functions:
+        split_data: funtions that split data into lists
 """
 
 def split_data(keys,values):
