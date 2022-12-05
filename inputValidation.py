@@ -34,7 +34,7 @@ def validate_input(inputs,outputs):
     """
     #Verify if it is going to show data in display
     if outputs == None:
-        if inputs.endswith('.txt'):#Check if ends with txt
+        if inputs.endswith('.txt') or inputs.endswith('.def'):#Check if ends with txt
             print("Results will be displayed in console")
         else:
             raise Exception("Error in input file name, please check it")
@@ -75,15 +75,15 @@ def patterns(arguments):
     """
     myDict = {}
     #All patterns to read
-    q_pattern = '@(\s*Q\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
-    sigma_pattern = '@(\s*sigma\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
-    gamma_pattern = '@(\s*gamma\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'  
+    q_pattern = '@(\s*Q\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w+\s*)*})'
+    sigma_pattern = '@(\s*sigma\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w+\s*)*})'
+    gamma_pattern = '@(\s*gamma\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w+\s*)*})'  
     starter_pattern = '@(\s*q0\s*)\s*=\s*(\s*\w+\s*)'  
-    space_pattern = '@(\s*b\s*)\s*=\s*(\s*\D\s*)'
+    space_pattern = '@(\s*b\s*)\s*=\s*(\s*\w\s*)'
     final_state_pattern = '@(\s*F\s*)\s*=\s*({(\s*\w+\s*)})'
-    transition_pattern = '@(\s*f\s*)=\s*({\(\s*\w+\s*\w\s*\)\s*->\s*\(\s*\w+\s*\w \s*\w\)\s*(,\s*\(\s*\w+ \s*\w\s*\)\s*->\s*\(\s*\w+ \s*\w \s*\w\)\s*)*})'
-    test_pattern = '@(\s*test\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
-    eval_pattern = '@(\s*val\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w*\s*)*})'
+    transition_pattern = '@(\s*f\s*)=\s*({\(\s*\w+ \s*\w+\s*\)\s*->\s*\(\s*\w+ \s*\w+ \s*\w+\s*\)\s*(,\s*\(\s*\w+ \s*\w+\s*\)\s*->\s*\(\s*\w+ \s*\w+ \s*\w+\s*\)\s*)*})'
+    test_pattern = '@(\s*test\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w+\s*)*})'
+    eval_pattern = '@(\s*val\s*)\s*=\s*({(\s*\w+\s*)+(,\s*\w+\s*)*})'
     #Create list of patterns
     patterns =[q_pattern,sigma_pattern,gamma_pattern,starter_pattern
                ,space_pattern,final_state_pattern,transition_pattern
