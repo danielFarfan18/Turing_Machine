@@ -1,5 +1,3 @@
-
-Developed by: Marcos Daniel Rodríguez Farfán
 ## Turing Machine
 
 A touring machine is defined by the 7 tuple (Q, Sigma, Gamma(Γ), q0, b, F, f).
@@ -27,3 +25,6 @@ This program will read a txt or def file to create a turing machine, use the fol
 
 Requirements:
 libraries: re, prettytable, argparse
+
+
+Developed by: Marcos Daniel Rodríguez Farfán
